@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+.header{
+    position: relative;
+    background: url($imgPath+'/home/bg_header.jpg') no-repeat left center;
+    background-size: cover;
+    padding-top: 30vh;
+    height: 100vh;
+    text-align: center;
+    &::after{
+        content: "";
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height:100%;
+        background-color: rgba(0,0,0,0.3);
+    }
+}
+.header__logo,
+.header__title
+{
+    position: relative;
+    z-index: 1;
+}
+.header__title{
+    margin-top: 30px;
+    font-size: 24px;
+    color: #fff;
+}
+
+
+// work
+.section__work{
+    padding-top: 50px;
+    background-color: #f3f3f3;
+}
+.work__title{
+    font-size: 32px;
+    background-color: #434343;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    width: calc( 50% - 15px );
+    padding-right: 15px;
+    color: #fff;
+    margin-bottom: -50px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.work__list{
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+
+    -moz-column-gap: 30px;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;    
+}
+.work__item{
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    padding-bottom: 30px;
+    &:first-child{
+        margin-top: 65px;
+    }
+}
+.work__item__img__wrap{
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.work__item__img{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform .4s;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.work__item__info__wrap{
+    background-color: #fff;
+    padding: 24px 32px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.work__item__title{
+    font-size: 24px;
+    text-decoration: underline;
+    
+    display: inline-block;
+    line-height: 1.3;
+}
+
+.work__item__description{
+    padding: 20px 0 10px;
+    line-height: 1.6;
+    color: #666;
+}
+.work__item__skill{
+    color: #939191;
+    font-size: 14px;
+}
+
+//about
+.section__about{
+    background-color: $orange;
+    padding: 100px 0;
+    .wrap{
+        display: flex;
+    }
+}
+.about__area{
+    width: 50%;
+    &.left{
+        padding-right: 15px;
+    }
+    &.right{
+        padding-left: 15px;
+    }
+}
+
+.about__info{
+    line-height: 1.8;
+    padding: 24px 32px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    &:first-child{
+        margin-top: 0;
+    }
+    &.dark{
+        background-color: #4f4f4f;
+        color: #fff;
+    }
+    &.white{
+        background-color: #fff;
+    }
+}
+
+.about__skill__list{
+    display: flex;
+    justify-content: space-between;
+}
+.about__skill__items{
+    flex-basis: 33.3%;
+    .item{
+        font-size: 14px;
+        display: block;
+        line-height: 2;
+    }
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+//base
+@import './base/reset';
+@import './base/font';
+@import './base/class';
+
+//layouts
+@import './layouts/header';
+@import './layouts/layout';
+@import './layouts/footer';
+
