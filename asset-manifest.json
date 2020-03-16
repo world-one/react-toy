@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-toy/static/css/main.5b5b9632.chunk.css",
-    "main.js": "/react-toy/static/js/main.a58d2f21.chunk.js",
-    "main.js.map": "/react-toy/static/js/main.a58d2f21.chunk.js.map",
+    "main.js": "/react-toy/static/js/main.e763c3a6.chunk.js",
+    "main.js.map": "/react-toy/static/js/main.e763c3a6.chunk.js.map",
     "runtime-main.js": "/react-toy/static/js/runtime-main.04da0818.js",
     "runtime-main.js.map": "/react-toy/static/js/runtime-main.04da0818.js.map",
     "static/js/2.254b05dd.chunk.js": "/react-toy/static/js/2.254b05dd.chunk.js",
     "static/js/2.254b05dd.chunk.js.map": "/react-toy/static/js/2.254b05dd.chunk.js.map",
     "index.html": "/react-toy/index.html",
-    "precache-manifest.679870da6e38fca9d8ee179498c42aea.js": "/react-toy/precache-manifest.679870da6e38fca9d8ee179498c42aea.js",
+    "precache-manifest.e3ebfdabb257d5fc196b41ae57b29dd7.js": "/react-toy/precache-manifest.e3ebfdabb257d5fc196b41ae57b29dd7.js",
     "service-worker.js": "/react-toy/service-worker.js",
     "static/css/main.5b5b9632.chunk.css.map": "/react-toy/static/css/main.5b5b9632.chunk.css.map",
     "static/js/2.254b05dd.chunk.js.LICENSE.txt": "/react-toy/static/js/2.254b05dd.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.04da0818.js",
     "static/js/2.254b05dd.chunk.js",
     "static/css/main.5b5b9632.chunk.css",
-    "static/js/main.a58d2f21.chunk.js"
+    "static/js/main.e763c3a6.chunk.js"
   ]
 }
