@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.weather__info__list{
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+
+	-moz-column-gap: 30px;
+	-webkit-column-gap: 30px;
+	column-gap: 30px;    
+}
+.weather__info__item{
+	display: flex;
+	border-bottom: 1px dotted #acacac;
+	padding: 8px 0;
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	& > span{
+		display: block;
+	}
+	.key{
+		width: 120px;
+		text-align: center;
+	}
+}
