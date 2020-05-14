@@ -1,4 +1,5 @@
 {
+  "homepage": "https://world-one.github.io/react-toy/",
   "name": "reeact-ts-weather",
   "version": "0.1.0",
   "private": true,
@@ -56,10 +57,12 @@
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.0",
     "react-dom": "^16.13.0",
+    "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
+    "semantic-ui-react": "^0.88.2",
     "semver": "6.3.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "2.3.4",
@@ -74,7 +77,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -145,5 +150,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

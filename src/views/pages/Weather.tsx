@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import '#/pages/weather.scss';
+import { Grid, Item, Divider, Loader, Dimmer } from 'semantic-ui-react';
 
 interface State{
-	info : info[]
+	info : info[],
+	active : boolean
 }
 interface info{
 	name: string,
@@ -18,7 +19,8 @@ class Weather extends React.Component<object,State>{
 		this.getData();
 
 		this.state = {
-				info : []
+				info : [],
+				active: true
 		};
 	}
 
@@ -52,7 +54,7 @@ class Weather extends React.Component<object,State>{
 				{ name: "일몰", value: this.timeToDate(d.sys.sunset) },
 			]
 
-			this.setState({ info : set })
+			this.setState({ info : set, active: false })
 
 		}).catch((err)=>{
 			console.log(err);
@@ -72,20 +74,55 @@ class Weather extends React.Component<object,State>{
 	}
 
 	render(){
+		// let id, idx;
+		// let infoList:object[][] = [];
+		// let columnCount = 6;
+		// this.state.info.forEach( (item, i) => {
+		// 		id = Math.floor(i/columnCount);
+		// 		idx = i%columnCount;
+		// 		if(idx === 0) infoList[id] = [];
+		// 		infoList[id][idx] = <Grid.Column key={i}>
+		// 			<Item>
+		// 				<Item.Content>
+		// 					<Item.Header>{item.name}</Item.Header>
+		// 					<Item.Description>{item.value}
+		// 					</Item.Description>
+		// 				</Item.Content>
+		// 			</Item>
+		// 			<Divider></Divider>
+		// 		</Grid.Column>
+				
+		// })
+		let { active } = this.state;
 		return (
-			<div className="contents">
-				<div className="wrap">
-					<ul className="weather__info__list">
-						{this.state.info.map( (item, index) => {
-							return  (
-								<li className="weather__info__item" key={index}>
-									<span className="key">{item.name}</span>
-									<span className="value">{item.value}</span>
-								</li>
-							); 
-						})}
-					</ul>
-				</div>
+			
+			<div>
+			
+			<Dimmer active={active} page inverted>
+				<Loader inline>Loading</Loader>
+			</Dimmer>
+      
+			<Grid  doubling columns={5}>
+				{/* { infoList.map( (items, i) => {
+					return (
+					<Grid.Row>
+						{items.map(item => item)}
+					</Grid.Row>		
+					) */}
+				{this.state.info.map( (item, i) => {
+					return <Grid.Column textAlign="center"  key={i}>
+						<Item>
+							<Item.Content>
+								<Item.Header>{item.name}</Item.Header>
+								<Item.Description>{item.value}
+								</Item.Description>
+							</Item.Content>
+						</Item>
+						<Divider></Divider>
+					</Grid.Column>
+			})}
+			
+			</Grid>
 			</div>
 		);
 	}

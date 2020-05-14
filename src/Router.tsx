@@ -1,31 +1,36 @@
 import React from 'react';
-import { BrowserRouter,Switch,Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from '@/components/Header';
+import { Container, Segment } from 'semantic-ui-react'
 import { 
   Home,
-  Weather
+  Weather,
+  Markdown
 } from '@/pages';
-
-
-const menuList = [
-  { name: 'Home', path: '/' },
-  { name: 'Weather', path: '/weather' },
-]
-
 class Router extends React.Component{
-
+  
+  menuList(){
+    return [
+      { name: 'Home', path: '/', desc: '메인페이지' },
+      { name: 'Weather', path: '/weather', desc: 'openweathermap API' },
+      { name: 'Markdown', path: '/markdown', desc: 'read md file render' },
+    ]
+  }
+  
   render(){
     return (
-      <BrowserRouter>
-        <div className="container">
-          <Header menuList={ menuList } name="j" age={1} />
+      <HashRouter>
+        <Container>
+          <Header menuList={ this.menuList() } />
+          <Segment>
           <Switch>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/"  render={ (props) => <Home {...props} menuList={this.menuList()} /> } />
             <Route exact path="/Weather" component={Weather}/>
-            {/* <Route path="/Project/:title" component={Project}/> */}
+            <Route path="/Markdown" component={Markdown}/>
           </Switch>
-        </div>
-      </BrowserRouter>
+          </Segment>
+        </Container>
+      </HashRouter>
     );
   }
 }

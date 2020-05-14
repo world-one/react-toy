@@ -1,20 +1,35 @@
 import React from 'react';
-import '#/pages/home.scss';
+import { Card } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
-class Home extends React.Component{
-
-    render(){
-        return (
-            <div className="contents">
-                <div className="wrap">
-                    <ul className="project__list">
-                        <li className="project__item">날씨</li>
-                        <li className="project__item">계산기</li>
-                    </ul>
-                </div>
-            </div>
-        );
-    }
+interface menu{
+  name: string, 
+  path: string,
+  desc?: string
+}
+interface menuList{
+  menuList: menu[]
+}
+class Home extends React.Component<menuList>{
+  public menuList:menu[];
+  constructor(props:menuList){
+    super(props);
+    this.menuList = props.menuList;
+  }
+  
+  render(){          
+    return (
+      <Card.Group >
+      {this.menuList.map( (el, index) => 
+        <Card as={Link} to={el.path}
+          key={index}
+          header={ el.name }
+          description= {el.desc ? el.desc : ''}
+          meta= {el.path}
+        />)}
+      </Card.Group>
+    );
+  }
 
 }
 
